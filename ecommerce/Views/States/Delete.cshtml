@@ -1,0 +1,32 @@
+﻿@model ECommerce.Models.State
+
+@{
+    ViewBag.Title = "Remover Estado";
+}
+
+<h2>Deletar</h2>
+
+<h3>Quer remover o estado, tem certeza?</h3>
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
